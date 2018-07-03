@@ -1,0 +1,17 @@
+/**
+ * New model file
+ */
+
+namespace models.transactions
+
+import models.person.*
+  
+transaction giveMessage{
+    o String txt
+    --> Person receive
+}
+
+transaction passMessage{
+	--> Person from
+    --> Person to
+}
