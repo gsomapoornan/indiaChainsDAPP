@@ -1,0 +1,35 @@
+/**
+
+* New query file
+
+*/
+
+
+
+query findUser{ //the declaration
+
+ description: "This Query is to find users"//the description that will show up in the rest server
+
+ statement: //the logic
+
+  SELECT models.person.Person //the object the query will perform on
+
+  WHERE (_$name == name) //one condition (the '_$' indicates input)
+
+ 
+
+}
+
+query findUserWithMessage{
+
+ description: "Show specific messages"
+
+ statement:
+
+  SELECT models.person.Person
+
+  WHERE ((state == "TRUE") AND (_$message == message))
+
+        ORDER BY [name ASC] //this will order queries alphabetically (by name)
+
+}
